@@ -1,9 +1,8 @@
-const theme = require('../src/theme')
+import { ChakraProvider } from '@chakra-ui/react';
+import { theme } from "./../src/theme.js"
 
 export const parameters = {
-  chakra: {
-    theme,
-  },
+  chakra: { theme },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -12,3 +11,14 @@ export const parameters = {
     },
   },
 }
+
+/*
+ * Add Chakra UI provider in storybook
+ */
+export const decorators = [
+  Story => (
+    <ChakraProvider theme={theme}>
+      <Story />
+    </ChakraProvider>
+  ),
+];

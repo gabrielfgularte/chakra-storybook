@@ -17,4 +17,10 @@ module.exports = {
   features: {
     emotionAlias: false,
   },
+  core: {
+    builder: 'webpack5',
+  },
+  refs: {
+    // '@chakra-ui/react': { disable: true }, // Enable this if you want to hide chakra UI vender storybook
+  },
 }
